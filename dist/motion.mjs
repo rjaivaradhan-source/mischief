@@ -3,7 +3,7 @@ const el=id=>document.getElementById(id);
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 let playing=!reduced.matches,style='auto',snapshot=document.createElement('canvas'),recipe='',lastFrame=0,busy=false,gifBlob=null,gifName='',gifMetadata=null;
 snapshot.width=snapshot.height=512;
-function resolvedStyle(){if(style!=='auto')return style;const formula=el('formula').textContent;if(formula.includes('❄'))return 'float';if(formula.includes('👑'))return 'heartbeat';if(/[❤💋]/u.test(formula))return 'heartbeat';if(/[😡🤯⚡]/u.test(formula))return 'wiggle';if(/[😴💤🌙👻]/u.test(formula))return 'float';return 'bounce';}
+function resolvedStyle(){if(style!=='auto')return style;const formula=el('formula').textContent;if(/[🌧🌦☔💦]/u.test(formula))return 'rain';if(formula.includes('❄'))return 'float';if(formula.includes('👑'))return 'heartbeat';if(/[❤💋]/u.test(formula))return 'heartbeat';if(/[😡🤯⚡]/u.test(formula))return 'wiggle';if(/[😴💤🌙👻]/u.test(formula))return 'float';return 'bounce';}
 function sync(){recipe=el('resultName').textContent;snapshot.getContext('2d').clearRect(0,0,512,512);snapshot.getContext('2d').drawImage(el('preview'),0,0);gifBlob=null;el('shareGif').hidden=true;el('actionStatus').textContent='';if(!playing)paintMotion(el('preview').getContext('2d'),snapshot,'still',0,512);}
 function setPlaying(value){playing=value;document.body.classList.toggle('motion-paused',!playing);el('motionToggle').setAttribute('aria-pressed',playing);el('motionToggle').textContent=playing?'Ⅱ Pause':'▶ Play';if(!playing)paintMotion(el('preview').getContext('2d'),snapshot,'still',0,512);}
 sync();setPlaying(playing);
