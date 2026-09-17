@@ -1,0 +1,12 @@
+{
+  "name": "mischief-emoji-lab",
+  "version": "0.2.0",
+  "private": true,
+  "description": "An installable emoji mixer and embeddable web SDK",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}
