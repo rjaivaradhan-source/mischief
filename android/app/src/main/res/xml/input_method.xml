@@ -1,0 +1,3 @@
+<input-method xmlns:android="http://schemas.android.com/apk/res/android" android:settingsActivity="com.mischief.emojikit.MainActivity" android:supportsSwitchingToNextInputMethod="true">
+  <subtype android:label="@string/keyboard_name" android:imeSubtypeMode="keyboard" android:isAsciiCapable="false"/>
+</input-method>

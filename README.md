@@ -38,7 +38,7 @@ Open `/integration-demo.html` locally for the brand integration example and `/in
 
 ## Releases and Git
 
-Source history is tracked in this folder's own Git repository. The existing remote source repository is associated with Sites, not GitHub. Pushing source alone does not publish the app in this project. Hosting is a separate step.
+Source history is tracked in this folder's own Git repository. The GitHub repository is https://github.com/rjaivaradhan-source/mischief. Sites also maintains a separate source repository for publishing. Pushing to GitHub does not publish the app; hosting is a separate step.
 
 For app releases, bump the service-worker cache version and versioned browser asset URLs together. Keep the archive aligned with the exact pushed commit. Never commit source-access tokens or `.env` files. Existing installations may offer an **Update app** button.
 
@@ -48,7 +48,7 @@ For app releases, bump the service-worker cache version and versioned browser as
 - The renderer composes and animates system emoji glyphs. It does not use Telegram artwork, generative AI, or a facial animation rig.
 - Unicode coverage does not include proprietary WhatsApp/Telegram stickers or guarantee font support on older devices.
 - Meaning rules suggest an interpretation; arbitrary combinations are not guaranteed to communicate universally.
-- Native Android/iOS keyboards and Windows input integration are not included.
+- An Android keyboard development preview lives in `android/`; see its setup and compatibility notes. iOS keyboards and Windows input integration are not included.
 - Brand configuration and a web SDK prototype are included; commercial exclusivity is not implied.
 
 ## Third-party notices

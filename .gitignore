@@ -6,3 +6,8 @@ node_modules/
 .DS_Store
 .sites-runtime/
 coverage/
+android/.gradle/
+android/local.properties
+android/**/build/
+*.jks
+*.keystore

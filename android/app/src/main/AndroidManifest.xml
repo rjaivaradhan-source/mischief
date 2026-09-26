@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <application android:label="Mischief" android:icon="@drawable/ic_mischief" android:theme="@android:style/Theme.Material.Light.NoActionBar" android:allowBackup="false" android:supportsRtl="true" android:usesCleartextTraffic="false">
+    <activity android:name=".MainActivity" android:exported="true">
+      <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+    </activity>
+    <service android:name=".MischiefKeyboard" android:label="Mischief Emoji Keyboard" android:permission="android.permission.BIND_INPUT_METHOD" android:exported="true">
+      <intent-filter><action android:name="android.view.InputMethod"/></intent-filter>
+      <meta-data android:name="android.view.im" android:resource="@xml/input_method"/>
+    </service>
+    <provider android:name=".StickerProvider" android:authorities="com.mischief.emojikit.stickers" android:exported="false" android:grantUriPermissions="true"/>
+  </application>
+</manifest>
