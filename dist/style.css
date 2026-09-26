@@ -13,3 +13,5 @@
 
 /* One compact merge mark across the header, browser tab and installed app. */
 .brand-icon{display:block;width:40px;height:40px;border:0;border-radius:12px;flex:none}
+
+.primary .mix-label{font-size:16px;line-height:1.25}.mix-button-icon{width:28px;height:28px;flex:none;margin-left:12px;border-radius:8px}.brand-icon{width:44px;height:44px;box-shadow:0 2px 4px #24242112}@keyframes pop{from{opacity:.85;transform:translateY(2px)}to{opacity:1;transform:translateY(0)}}

@@ -48,7 +48,7 @@ For app releases, bump the service-worker cache version and versioned browser as
 - The renderer composes and animates system emoji glyphs. It does not use Telegram artwork, generative AI, or a facial animation rig.
 - Unicode coverage does not include proprietary WhatsApp/Telegram stickers or guarantee font support on older devices.
 - Meaning rules suggest an interpretation; arbitrary combinations are not guaranteed to communicate universally.
-- An Android keyboard development preview lives in `android/`; see its setup and compatibility notes. iOS keyboards and Windows input integration are not included.
+- A signed Android keyboard development APK is available in [`releases/Mischief-Android-preview.apk`](releases/Mischief-Android-preview.apk). See [`android/README.md`](android/README.md) for installation, build checks and compatibility limits. Physical-device testing is still required. iOS keyboards and Windows input integration are not included.
 - Brand configuration and a web SDK prototype are included; commercial exclusivity is not implied.
 
 ## Third-party notices

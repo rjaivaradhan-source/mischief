@@ -2,7 +2,7 @@
 
 An offline Android emoji mixer and selectable sticker keyboard, for Android 7.1 (API 25) and newer. Includes the shared Unicode catalog and composition engine, 2–4 ingredients, PNG export, animated GIF export, and original-emoji text fallback. This is a development preview, not a Play Store production release.
 
-Current status: source implementation only. No verified APK is included. The local Windows build stopped with Java `AccessDeniedException` while processing SDK and generated JAR files. Compilation, lint, device installation, and cross-app behavior still need successful verification. The installation steps below apply after an APK has been built.
+Current status: a signed development APK is included at [`../releases/Mischief-Android-preview.apk`](../releases/Mischief-Android-preview.apk). Compilation, APK signature verification, and Android lint passed (0 errors, 7 warnings) on September 26, 2026. Device installation and cross-app behavior have not been tested. Lint warnings concern backup configuration, a programmatic view constructor, and untranslated UI strings.
 
 ## Install and use
 
@@ -22,6 +22,12 @@ Use JDK 17, Gradle 8.11.1, Android SDK Platform 35 and Build Tools 35.0.0. Set `
 Gradle generates a local debug signing key by default. In restricted Windows environments, generate a development key with `keytool` and set `MISCHIEF_DEBUG_KEYSTORE` to its location (alias `androiddebugkey`, development-only password `android`). Never use this public development password for release signing. Keep the generated key out of Git.
 
 The APK is generated at `app/build/outputs/apk/debug/app-debug.apk`. Create a private release key and release configuration before wider distribution. Updates must use the same application ID and signing key. This preview does not silently update itself; automatic updates require a distribution channel such as Google Play and a production signing setup.
+
+For Windows environments where javac fails opening JAR files with `AccessDeniedException`, `build-preview.ps1` supports an explicit `-EcjJar` fallback using Eclipse ECJ 3.40.0. It prepares Android resources, compiles all Java sources, then packages and lints the result. Supply JDK, SDK, Gradle and optional development-keystore paths; the script does not download tools or modify permissions. Example:
+
+```powershell
+./build-preview.ps1 -JdkPath C:/tools/jdk-17 -SdkPath C:/tools/android-sdk -GradlePath C:/tools/gradle-8.11.1/bin/gradle.bat -EcjJar C:/tools/ecj-3.40.0.jar -DebugKeystore C:/private/mischief-debug.keystore
+```
 
 ## Privacy and content handling
 

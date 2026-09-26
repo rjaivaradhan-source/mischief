@@ -37,8 +37,23 @@ globalThis.MischiefComposition = {
     if(e.crown){sc.save();sc.globalCompositeOperation='source-atop';sc.fillStyle='rgba(88,45,4,.22)';sc.filter='blur(5px)';sc.beginPath();sc.ellipse(256,y-subjectBounds.height/2+size*.12+3,size*.28,7,0,0,Math.PI*2);sc.fill();sc.restore();}
     ctx.drawImage(subject,0,0,512,512);
     if(e.rain){ctx.save();ctx.strokeStyle='rgba(87,160,210,.75)';ctx.lineWidth=3;ctx.lineCap='round';for(const [x,ry] of [[128,142],[199,99],[326,116],[391,210],[119,312],[371,369]]){const fall=animated?80+((ry-80+phase*340)%340):ry;ctx.globalAlpha=animated?Math.sin(Math.PI*(fall-80)/340)**2:1;ctx.beginPath();ctx.moveTo(x,fall);ctx.lineTo(x-9,fall+26);ctx.stroke();}ctx.restore();glyph(ctx,'💧',149,299,33,-.1);glyph(ctx,'💧',362,330,30,.08);}
-    // A crown overlaps the subject's forehead, rather than floating beside it.
-    if(e.crown){const crownSize=size*.66;ctx.font=crownSize+'px'+font;const cm=ctx.measureText('👑'),cw=(cm.actualBoundingBoxLeft||0)+(cm.actualBoundingBoxRight||cm.width),ch=(cm.actualBoundingBoxAscent||crownSize*.8)+(cm.actualBoundingBoxDescent||crownSize*.2);const crownHeight=ch*crownSize/Math.max(cw,ch,1);const crownY=y-subjectBounds.height/2+size*.12-crownHeight/2;glyph(ctx,'👑',256+(animated&&e.frozen?2*Math.sin(t*4):0),crownY,crownSize,0);if(animated){ctx.save();ctx.globalAlpha=.25+.65*Math.pow((1+Math.sin(t))/2,3);glyph(ctx,'✨',306,crownY-crownHeight*.23,23);ctx.restore();}}
+    // A fitted crown has a curved rim that wraps around the forehead, not a pasted glyph.
+    if(e.crown){
+      const rimY=y-subjectBounds.height/2+size*.105;
+      const half=Math.min(subjectBounds.width*.32,94);
+      ctx.save();ctx.translate(256+(animated&&e.frozen?2*Math.sin(t*4):0),rimY);
+      // The curved bottom follows the head; the tapered sides suggest depth.
+      const gold=ctx.createLinearGradient(-half,-85,half,16);
+      gold.addColorStop(0,'#fff0a0');gold.addColorStop(.32,'#ffcf49');gold.addColorStop(.7,'#e99a19');gold.addColorStop(1,'#ac620e');
+      ctx.fillStyle=gold;ctx.strokeStyle='#ab701c';ctx.lineWidth=2.5;ctx.lineJoin='round';
+      ctx.beginPath();ctx.moveTo(-half,-14);ctx.lineTo(-half-8,-73);ctx.lineTo(-half*.49,-45);ctx.lineTo(0,-99);ctx.lineTo(half*.49,-45);ctx.lineTo(half+8,-73);ctx.lineTo(half,-14);
+      ctx.bezierCurveTo(half*.55,4,-half*.55,4,-half,-14);ctx.closePath();ctx.fill();ctx.stroke();
+      // Front band curves around the forehead and casts a contact shadow.
+      ctx.fillStyle='#f9c64a';ctx.beginPath();ctx.moveTo(-half,-15);ctx.bezierCurveTo(-half*.5,2,half*.5,2,half,-15);ctx.lineTo(half,0);ctx.bezierCurveTo(half*.5,20,-half*.5,20,-half,0);ctx.closePath();ctx.fill();ctx.stroke();
+      ctx.strokeStyle='#fff0aa';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(-half+6,-12);ctx.bezierCurveTo(-half*.5,3,half*.5,3,half-6,-12);ctx.stroke();
+      for(const [jx,jy,r,color] of [[0,-38,8,'#8c57bc'],[-half*.67,-36,5,'#42a9a7'],[half*.67,-36,5,'#42a9a7']]){ctx.fillStyle=color;ctx.strokeStyle='#fff0a0';ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(jx,jy,r,r*1.25,0,0,Math.PI*2);ctx.fill();ctx.stroke();}
+      ctx.restore();
+    }
     if(e.frozen){glyph(ctx,'❄️',132,217,39,-.12);glyph(ctx,'❄️',370,341,45,.12);}
     if(e.sparkle){glyph(ctx,'✨',373,184,62,.05);glyph(ctx,'✨',128,322,32,-.12);}
     if(e.electric){const charge=animated?Math.pow(Math.max(0,Math.cos(t)),12):.8;const hitY=e.crown?115:y-subjectBounds.height/2+24;const hitX=e.crown?309:271;ctx.save();ctx.globalAlpha=.65+.35*charge;ctx.shadowColor='rgba(255,208,43,.65)';ctx.shadowBlur=8+12*charge;glyph(ctx,'⚡',hitX+22,hitY-56,e.crown?115:152,.08);ctx.shadowBlur=0;ctx.globalAlpha=.25+.65*charge;glyph(ctx,'✨',hitX,hitY,38,0);ctx.restore();}
