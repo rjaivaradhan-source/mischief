@@ -42,10 +42,16 @@ Source history is tracked in this folder's own Git repository. The GitHub reposi
 
 For app releases, bump the service-worker cache version and versioned browser asset URLs together. Keep the archive aligned with the exact pushed commit. Never commit source-access tokens or `.env` files. Existing installations may offer an **Update app** button.
 
+## Special Library
+
+Six designed pairs use bundled, transparent 3D-style artwork: thinking king, frozen smile, burning heart, loved up, rainy days, and fiery mood. Select them in the Special Library or mix their ingredients directly. Add any catalog emoji as a third or fourth ingredient; additional effects and accents still use the shared renderer. Other pairs use the standard mixer. The web Special artwork switch lets you compare both styles.
+
+Assets live in `dist/special/`; `dist/special.js` handles matching, loading, alpha bounds, failure fallback and gentle motion. These are pre-rendered illustrations, not poseable 3D meshes or runtime AI generations. PNG/GIF export waits for the selected asset, and all six are cached offline and bundled in Android preview 0.2.0.
+
 ## Current boundaries
 
 - PNG export is 1024 × 1024; GIF is 512 × 512, with 50 frames over 2 seconds.
-- The renderer composes and animates system emoji glyphs. It does not use Telegram artwork, generative AI, or a facial animation rig.
+- The standard renderer composes system emoji glyphs. Special Library assets were AI-generated during development and are bundled locally; runtime mixing does not call AI. Neither path uses Telegram artwork or a facial animation rig.
 - Unicode coverage does not include proprietary WhatsApp/Telegram stickers or guarantee font support on older devices.
 - Meaning rules suggest an interpretation; arbitrary combinations are not guaranteed to communicate universally.
 - A signed Android keyboard development APK is available in [`releases/Mischief-Android-preview.apk`](releases/Mischief-Android-preview.apk). See [`android/README.md`](android/README.md) for installation, build checks and compatibility limits. Physical-device testing is still required. iOS keyboards and Windows input integration are not included.

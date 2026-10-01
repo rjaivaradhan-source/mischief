@@ -14,17 +14,20 @@ globalThis.MischiefComposition = {
     return {base,effects,renderEmoji:fusion?.[2]||base.emoji,integratedFire:fusion?.[2]==='❤️‍🔥',accents:fusion?[]:other.filter(x=>!modifiers.has(x.emoji))};
   },
   draw(canvas,items,phase=null) {
-    const {base,effects:e,accents,renderEmoji,integratedFire}=this.plan(items);const ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);ctx.save();ctx.scale(canvas.width/512,canvas.height/512);
+    const plan=this.plan(items),base=plan.base,e={...plan.effects};let accents=plan.accents;const renderEmoji=plan.renderEmoji,integratedFire=plan.integratedFire;
+    const special=globalThis.MischiefSpecial,entry=special?.match(items,base),record=special?.record(entry),art=record?.state==='ready'?record:null;
+    if(art){if(entry.effect)e[entry.effect]=false;accents=accents.filter(item=>!entry.pair.includes(item.emoji));}
+    const ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);ctx.save();ctx.scale(canvas.width/512,canvas.height/512);
     const font=' "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif';
     const animated=phase!==null,t=(phase||0)*Math.PI*2;
     function glyph(target,emoji,x,y,size,angle=0){target.save();target.textAlign='left';target.textBaseline='alphabetic';let sx=1,sy=1;if(animated){if(emoji==='🔥'){sx=1+.02*Math.sin(t*2);sy=1+.03*Math.cos(t*2);angle+=.012*Math.sin(t*2);}else if(emoji==='❄️'){y+=6*Math.sin(t+x);angle+=t;size*=1+.05*Math.sin(t+y);}else if(emoji==='💧'){y+=10*Math.sin(t+x);sx=.88;sy=1.12;}else if(emoji==='✨'){size*=1+.08*Math.sin(t+x);angle+=.13*Math.sin(t);}else if(emoji==='⚡'){size*=1+.08*Math.sin(t*2);}else if(emoji==='💤'){y-=15*(1-Math.cos(t));size*=1+.12*Math.sin(t);}else if(emoji==='❤️'||emoji==='💋'||emoji==='❤️‍🔥'){sx=sy=1+.04*Math.pow((1+Math.cos(t*2))/2,4);}if(emoji===renderEmoji){if(e.frozen){x+=2*Math.sin(t*4);angle+=.008*Math.sin(t*4);}else if(e.sleep){sy=1+.012*(1+Math.sin(t))/2;}else if(!e.crown){angle+=.012*Math.sin(t);sy=1+.012*(1+Math.sin(t))/2;}}}target.translate(x,y);target.rotate(angle);target.scale(sx,sy);target.font=size+'px'+font;const m=target.measureText(emoji);const left=m.actualBoundingBoxLeft||0,right=m.actualBoundingBoxRight||m.width,ascent=m.actualBoundingBoxAscent||size*.8,descent=m.actualBoundingBoxDescent||size*.2;const fit=size/Math.max(left+right,ascent+descent,1);target.scale(fit,fit);target.fillText(emoji,(left-right)/2,(ascent-descent)/2);target.restore();return {width:(left+right)*fit,height:(ascent+descent)*fit};}
     const layeredFire=e.fire&&!integratedFire;
-    const y=e.crown?310:layeredFire||e.electric?292:268,size=e.crown?292:308;
+    const y=art?268:e.crown?310:layeredFire||e.electric?292:268,size=art?356:e.crown?292:308;
     if(e.rainbow)glyph(ctx,'🌈',256,221,388);
     if(e.cloud)glyph(ctx,'☁️',255,318,398);
     if(layeredFire)glyph(ctx,'🔥',256,251,398);
     // Tint only the subject's alpha silhouette, retaining facial detail and a transparent background.
-    const subject=document.createElement('canvas');subject.width=subject.height=canvas.width;const sc=subject.getContext('2d');sc.scale(canvas.width/512,canvas.height/512);const subjectBounds=glyph(sc,renderEmoji,256,y,size,e.wind&&!e.crown?.065+(animated?.02*Math.sin(t):0):0);
+    const subject=document.createElement('canvas');subject.width=subject.height=canvas.width;const sc=subject.getContext('2d');sc.scale(canvas.width/512,canvas.height/512);const subjectBounds=art?special.draw(sc,art,256,y,size,phase):glyph(sc,renderEmoji,256,y,size,e.wind&&!e.crown?.065+(animated?.02*Math.sin(t):0):0);
     if(e.frozen){sc.globalCompositeOperation='source-atop';const ice=sc.createLinearGradient(130,100,350,420);ice.addColorStop(0,'rgba(233,253,255,0.55)');ice.addColorStop(.4,'rgba(77,191,245,0.32)');ice.addColorStop(.72,'rgba(171,234,255,0.42)');ice.addColorStop(1,'rgba(42,130,216,0.32)');sc.fillStyle=ice;sc.fillRect(0,0,512,512);sc.fillStyle='rgba(244,254,255,.18)';sc.beginPath();sc.moveTo(145,92);sc.lineTo(184,92);sc.lineTo(355,450);sc.lineTo(319,450);sc.closePath();sc.fill();sc.globalCompositeOperation='source-over';}
     if(e.heat||layeredFire){sc.save();sc.globalCompositeOperation='source-atop';const warmth=sc.createLinearGradient(120,130,330,430);warmth.addColorStop(0,'rgba(255,182,25,.12)');warmth.addColorStop(1,'rgba(235,66,27,.28)');sc.fillStyle=warmth;sc.fillRect(0,0,512,512);sc.restore();}
     if(e.wave){sc.save();sc.globalCompositeOperation='source-atop';const water=sc.createLinearGradient(0,y-40,0,y+size/2);water.addColorStop(0,'rgba(64,183,231,.08)');water.addColorStop(1,'rgba(34,139,215,.53)');sc.fillStyle=water;sc.fillRect(0,0,512,512);sc.restore();}

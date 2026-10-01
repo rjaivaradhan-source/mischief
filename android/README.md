@@ -2,7 +2,7 @@
 
 An offline Android emoji mixer and selectable sticker keyboard, for Android 7.1 (API 25) and newer. Includes the shared Unicode catalog and composition engine, 2–4 ingredients, PNG export, animated GIF export, and original-emoji text fallback. This is a development preview, not a Play Store production release.
 
-Current status: a signed development APK is included at [`../releases/Mischief-Android-preview.apk`](../releases/Mischief-Android-preview.apk). Compilation, APK signature verification, and Android lint passed (0 errors, 7 warnings) on September 26, 2026. Device installation and cross-app behavior have not been tested. Lint warnings concern backup configuration, a programmatic view constructor, and untranslated UI strings.
+Current status: version 0.2.0-preview includes the six offline Special Library characters and quick-pick buttons. A signed development APK is included at [`../releases/Mischief-Android-preview.apk`](../releases/Mischief-Android-preview.apk). Compilation, APK signature verification, and Android lint passed (0 errors, 7 warnings) on October 1, 2026. Device installation and cross-app behavior have not been tested. Lint warnings concern backup configuration, a programmatic view constructor, and untranslated UI strings.
 
 ## Install and use
 

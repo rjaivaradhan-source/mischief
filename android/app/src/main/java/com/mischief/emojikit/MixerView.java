@@ -26,7 +26,7 @@ final class MixerView extends WebView {
                 Uri uri=request.getUrl();String name=uri.getPath();
                 if(!"https".equals(uri.getScheme())||!"mischief.local".equals(uri.getHost())||name==null||!name.startsWith("/assets/")||name.contains(".."))return blocked();
                 name=name.substring(8);
-                String mime=name.endsWith(".html")?"text/html":name.endsWith(".js")||name.endsWith(".mjs")?"text/javascript":name.endsWith(".css")?"text/css":name.endsWith(".svg")?"image/svg+xml":"text/plain";
+                String mime=name.endsWith(".html")?"text/html":name.endsWith(".js")||name.endsWith(".mjs")?"text/javascript":name.endsWith(".css")?"text/css":name.endsWith(".svg")?"image/svg+xml":name.endsWith(".png")?"image/png":"text/plain";
                 try{return new WebResourceResponse(mime,"UTF-8",getContext().getAssets().open(name));}catch(IOException e){return blocked();}
             }
             @Override public void onPageFinished(WebView v,String url){message(status);}

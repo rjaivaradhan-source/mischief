@@ -17,11 +17,12 @@ function draw(phase=null){MischiefComposition.draw(canvas,selected,phase);canvas
 function loop(time){if(playing&&time-last>32){draw((time%2000)/2000);last=time;}frame=requestAnimationFrame(loop);}requestAnimationFrame(loop);
 $('pause').onclick=()=>{playing=!playing;$('pause').textContent=playing?'Ⅱ':'▶';$('pause').setAttribute('aria-label',playing?'Pause animation':'Play animation');if(!playing)draw();};
 function native(method,...args){if(window.Android&&typeof Android[method]==='function'){if(method!=='text'&&args.length===3)args.push(Android.token());Android[method](...args);}else status('Native sharing is available in the Android app.');}
-function png(copy){const output=document.createElement('canvas');output.width=output.height=1024;MischiefComposition.draw(output,selected);native(copy?'copy':'send',output.toDataURL('image/png').split(',')[1],'image/png',MischiefMeaning(selected).alt);}
+async function png(copy){await MischiefSpecial.ensure(selected);const output=document.createElement('canvas');output.width=output.height=1024;MischiefComposition.draw(output,selected);native(copy?'copy':'send',output.toDataURL('image/png').split(',')[1],'image/png',MischiefMeaning(selected).alt);}
 $('png').onclick=()=>png(false);$('copy').onclick=()=>png(true);$('text').onclick=()=>native('text',selected.map(x=>x.emoji).join(''));
 $('gif').onclick=async()=>{
   if(busy)return;busy=true;$('gif').disabled=true;const token=window.Android?Android.token():0,items=selected.slice(),output=document.createElement('canvas');output.width=output.height=512;const ctx=output.getContext('2d');let worker;
   try{
+    await MischiefSpecial.ensure(items);
     worker=new Worker('gif-worker.mjs',{type:'module'});
     const bytes=await new Promise((resolve,reject)=>{
       const timeout=setTimeout(()=>reject(Error('Animation took too long. Try PNG.')),90000);
@@ -35,3 +36,6 @@ $('gif').onclick=async()=>{
   }catch(error){status(error.message||'Animation unavailable. Try PNG.');}finally{worker?.terminate();window.cancelExport=null;busy=false;$('gif').disabled=false;}
 };
 slots();grid();draw();
+
+window.addEventListener("mischief:artwork",()=>draw());
+const library=document.createElement("div");library.className="special-picks";library.setAttribute("aria-label","Special Library");for(const entry of MischiefSpecial.entries){library.append(button(entry.pair.join(""),"Special Library: "+entry.name,()=>{selected=entry.pair.map(lookup);slot=0;slots();draw();}));}document.getElementById("slots").before(library);
