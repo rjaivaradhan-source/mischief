@@ -68,3 +68,7 @@ System emoji artwork is supplied by each device. Review artwork rights before co
 ## Expanded review library
 
 Run `node scripts/expand-library.mjs` after `npm ci` to export 1,965 transparent 512px PNG compositions and a local searchable HTML gallery. Optional argument: output folder. These are shared treatments, not 1,965 individually sculpted characters. `scripts/import-faces.mjs` refreshes the 129 face sources from a pinned Microsoft commit. All other catalog pairs can be inspected on `library.html`; unsupported semantic combinations remain layered compositions.
+
+## Premium fire artwork — first batch
+
+Four face/fire pairs now match the user-supplied finish: happy, thinking, crying and angry. The angry reference is used as-is, and three variants were generated with built-in image_gen. Versioned originals live in `dist/special/fire-*-v2.png`; previous artwork is retained. This upgrades four fire pairs, not the entire 1,965-mix collection. The local gallery now contains nine signature pairs. Current APK predates this art pass.

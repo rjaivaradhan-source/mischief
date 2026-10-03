@@ -1,0 +1,925 @@
+{
+  "collection": "Premium fire",
+  "ready": 4,
+  "total": 131,
+  "method": "Built-in image_gen variants plus user-supplied angry reference",
+  "entries": [
+    {
+      "emoji": "😀",
+      "name": "grinning face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😃",
+      "name": "grinning face with big eyes",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😄",
+      "name": "grinning face with smiling eyes",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😁",
+      "name": "beaming face with smiling eyes",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😆",
+      "name": "grinning squinting face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😅",
+      "name": "grinning face with sweat",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤣",
+      "name": "rolling on the floor laughing",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😂",
+      "name": "face with tears of joy",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🙂",
+      "name": "slightly smiling face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🙃",
+      "name": "upside-down face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🫠",
+      "name": "melting face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😉",
+      "name": "winking face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😊",
+      "name": "smiling face with smiling eyes",
+      "element": "🔥",
+      "status": "ready",
+      "asset": "fire-happy-v2.png"
+    },
+    {
+      "emoji": "😇",
+      "name": "smiling face with halo",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🥰",
+      "name": "smiling face with hearts",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😍",
+      "name": "smiling face with heart-eyes",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤩",
+      "name": "star-struck",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😘",
+      "name": "face blowing a kiss",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😗",
+      "name": "kissing face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "☺️",
+      "name": "smiling face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😚",
+      "name": "kissing face with closed eyes",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😙",
+      "name": "kissing face with smiling eyes",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🥲",
+      "name": "smiling face with tear",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😋",
+      "name": "face savoring food",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😛",
+      "name": "face with tongue",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😜",
+      "name": "winking face with tongue",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤪",
+      "name": "zany face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😝",
+      "name": "squinting face with tongue",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤑",
+      "name": "money-mouth face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤗",
+      "name": "smiling face with open hands",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤭",
+      "name": "face with hand over mouth",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🫢",
+      "name": "face with open eyes and hand over mouth",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🫣",
+      "name": "face with peeking eye",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤫",
+      "name": "shushing face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤔",
+      "name": "thinking face",
+      "element": "🔥",
+      "status": "ready",
+      "asset": "fire-thinking-v2.png"
+    },
+    {
+      "emoji": "🫡",
+      "name": "saluting face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤐",
+      "name": "zipper-mouth face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤨",
+      "name": "face with raised eyebrow",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😐",
+      "name": "neutral face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😑",
+      "name": "expressionless face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😶",
+      "name": "face without mouth",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🫥",
+      "name": "dotted line face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😶‍🌫️",
+      "name": "face in clouds",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😏",
+      "name": "smirking face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😒",
+      "name": "unamused face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🙄",
+      "name": "face with rolling eyes",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😬",
+      "name": "grimacing face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😮‍💨",
+      "name": "face exhaling",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤥",
+      "name": "lying face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🫨",
+      "name": "shaking face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🙂‍↔️",
+      "name": "head shaking horizontally",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🙂‍↕️",
+      "name": "head shaking vertically",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😌",
+      "name": "relieved face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😔",
+      "name": "pensive face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😪",
+      "name": "sleepy face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤤",
+      "name": "drooling face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😴",
+      "name": "sleeping face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🫩",
+      "name": "face with bags under eyes",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😷",
+      "name": "face with medical mask",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤒",
+      "name": "face with thermometer",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤕",
+      "name": "face with head-bandage",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤢",
+      "name": "nauseated face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤮",
+      "name": "face vomiting",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤧",
+      "name": "sneezing face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🥵",
+      "name": "hot face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🥶",
+      "name": "cold face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🥴",
+      "name": "woozy face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😵",
+      "name": "face with crossed-out eyes",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😵‍💫",
+      "name": "face with spiral eyes",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤯",
+      "name": "exploding head",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤠",
+      "name": "cowboy hat face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🥳",
+      "name": "partying face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🥸",
+      "name": "disguised face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😎",
+      "name": "smiling face with sunglasses",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤓",
+      "name": "nerd face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🧐",
+      "name": "face with monocle",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😕",
+      "name": "confused face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🫤",
+      "name": "face with diagonal mouth",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😟",
+      "name": "worried face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🙁",
+      "name": "slightly frowning face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "☹️",
+      "name": "frowning face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😮",
+      "name": "face with open mouth",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😯",
+      "name": "hushed face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😲",
+      "name": "astonished face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😳",
+      "name": "flushed face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🫪",
+      "name": "distorted face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🥺",
+      "name": "pleading face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🥹",
+      "name": "face holding back tears",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😦",
+      "name": "frowning face with open mouth",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😧",
+      "name": "anguished face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😨",
+      "name": "fearful face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😰",
+      "name": "anxious face with sweat",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😥",
+      "name": "sad but relieved face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😢",
+      "name": "crying face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😭",
+      "name": "loudly crying face",
+      "element": "🔥",
+      "status": "ready",
+      "asset": "fire-crying-v2.png"
+    },
+    {
+      "emoji": "😱",
+      "name": "face screaming in fear",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😖",
+      "name": "confounded face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😣",
+      "name": "persevering face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😞",
+      "name": "disappointed face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😓",
+      "name": "downcast face with sweat",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😩",
+      "name": "weary face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😫",
+      "name": "tired face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🥱",
+      "name": "yawning face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😤",
+      "name": "face with steam from nose",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😡",
+      "name": "enraged face",
+      "element": "🔥",
+      "status": "ready",
+      "asset": "fire-angry-v2.png"
+    },
+    {
+      "emoji": "😠",
+      "name": "angry face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤬",
+      "name": "face with symbols on mouth",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😈",
+      "name": "smiling face with horns",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "👿",
+      "name": "angry face with horns",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "💀",
+      "name": "skull",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "☠️",
+      "name": "skull and crossbones",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "💩",
+      "name": "pile of poo",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤡",
+      "name": "clown face",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "👹",
+      "name": "ogre",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "👺",
+      "name": "goblin",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "👻",
+      "name": "ghost",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "👽",
+      "name": "alien",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "👾",
+      "name": "alien monster",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🤖",
+      "name": "robot",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😺",
+      "name": "grinning cat",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😸",
+      "name": "grinning cat with smiling eyes",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😹",
+      "name": "cat with tears of joy",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😻",
+      "name": "smiling cat with heart-eyes",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😼",
+      "name": "cat with wry smile",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😽",
+      "name": "kissing cat",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🙀",
+      "name": "weary cat",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😿",
+      "name": "crying cat",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "😾",
+      "name": "pouting cat",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🙈",
+      "name": "see-no-evil monkey",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🙉",
+      "name": "hear-no-evil monkey",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    },
+    {
+      "emoji": "🙊",
+      "name": "speak-no-evil monkey",
+      "element": "🔥",
+      "status": "pending",
+      "asset": null
+    }
+  ]
+}

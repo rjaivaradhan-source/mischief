@@ -39,5 +39,5 @@ test('failed artwork returns to the standard renderer',()=>{
 test('asset failure settles loading promises without blocking export',async()=>{
   const images=[],events=[];const env={Image:class{constructor(){images.push(this);}},document:{currentScript:null},setTimeout:()=>1,clearTimeout(){},Event:class{constructor(type){this.type=type;}},dispatchEvent:event=>events.push(event)};
   vm.createContext(env);vm.runInContext(fs.readFileSync('dist/special.js','utf8'),env);for(const image of images)image.onerror();await env.MischiefSpecial.ready;
-  assert.equal(events.length,6);for(const entry of env.MischiefSpecial.entries)assert.equal(env.MischiefSpecial.record(entry).state,'failed');
+  assert.equal(events.length,env.MischiefSpecial.entries.length);for(const entry of env.MischiefSpecial.entries)assert.equal(env.MischiefSpecial.record(entry).state,'failed');
 });

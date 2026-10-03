@@ -6,7 +6,10 @@
     {id:'burning-heart', name:'Burning heart', pair:['❤️','🔥'], effect:'fire', mood:'Love with intensity', motion:'warm'},
     {id:'loved-up', name:'Loved up', pair:['😊','❤️'], effect:null, mood:'Feeling loved', motion:'gentle'},
     {id:'rainy-days', name:'Rainy days', pair:['😭','🌧️'], effect:'rain', mood:'A heavy-hearted day', motion:'gentle'},
-    {id:'fiery-mood', name:'Fiery mood', pair:['😡','🔥'], effect:'fire', mood:'Running out of patience', motion:'warm'}
+    {id:'fire-angry-v2', name:'Fiery mood', pair:['😡','🔥'], effect:'fire', mood:'Running out of patience', motion:'warm'},
+    {id:'fire-happy-v2', name:'Glowing with joy', pair:['😊','🔥'], effect:'fire', mood:'A warm burst of happiness', motion:'warm'},
+    {id:'fire-thinking-v2', name:'Burning question', pair:['🤔','🔥'], effect:'fire', mood:'A thought that will not let go', motion:'thoughtful'},
+    {id:'fire-crying-v2', name:'Burning tears', pair:['😭','🔥'], effect:'fire', mood:'Overwhelmed by an intense feeling', motion:'gentle'}
   ];
   const aliases = {crown:['👑'],frozen:['❄️','🧊','🌨️','☃️','⛄'],fire:['🔥','🌋'],rain:['🌧️','🌦️','☔','☂️','💦','💧','⛈️']};
   const baseURL = typeof document !== 'undefined' && document.currentScript ? new URL('.',document.currentScript.src).href : '';
