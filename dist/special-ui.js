@@ -3,7 +3,7 @@
   const toggle=document.getElementById('specialEnabled'),state=document.getElementById('artworkState');
   function update(){
     const items=MischiefIngredients(),entry=special.match(items,MischiefComposition.plan(items).base),record=special.record(entry);
-    state.textContent=!entry?'Standard mix':record?.state==='loading'?'Loading special artwork…':record?.state==='ready'?(items.length>2?'Special remix':'Special Library'):'Standard mix · artwork unavailable';
+    state.textContent=!entry?'Standard mix':record?.state==='loading'?'Loading special artwork…':record?.state==='ready'?(entry.baseArtwork?'Expression artwork':items.length>2?'Special remix':'Special Library'):'Standard mix · artwork unavailable';
     state.dataset.special=String(record?.state==='ready');
   }
   toggle.onchange=()=>{special.enabled=toggle.checked;MischiefChoose(MischiefIngredients().map(x=>x.emoji));};

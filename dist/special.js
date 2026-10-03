@@ -18,18 +18,19 @@
       const emojis=items.map(x=>x.emoji);
       // Keep the planner's dominant expression. Never turn an angry face into a happy one.
       return entries.find(entry=>entry.pair[0]===base.emoji && emojis.includes(entry.pair[0]) &&
-        (entry.effect ? aliases[entry.effect].some(x=>emojis.includes(x)) : emojis.includes(entry.pair[1]))) || null;
+        (entry.effect ? aliases[entry.effect].some(x=>emojis.includes(x)) : emojis.includes(entry.pair[1]))) ||
+        (globalThis.MischiefFaces||[]).find(entry=>entry.emoji===(globalThis.MischiefComposition?.plan(items).renderEmoji||base.emoji)&&entry.src) || null;
     },
-    record(entry){return entry ? records.get(entry.id) : null;},
+    record(entry){if(entry&&!records.has(entry.id)&&typeof Image!=='undefined')load(entry);return entry ? records.get(entry.id) : null;},
     async ensure(items){
       const plan=globalThis.MischiefComposition.plan(items), entry=this.match(items,plan.base);
-      if(entry)await records.get(entry.id)?.promise;
+      if(entry)await this.record(entry)?.promise;
     },
-    draw(target,record,x,y,size,phase) {
+    draw(target,record,x,y,size,phase,angle=0) {
       const {image,bounds,entry}=record;
       const fit=size/Math.max(bounds.w,bounds.h), w=bounds.w*fit,h=bounds.h*fit;
       const t=(phase||0)*Math.PI*2;
-      target.save();target.translate(x,y);
+      target.save();target.translate(x,y);target.rotate(angle);
       if(phase!==null){
         target.translate(entry.motion==='chill'?.65*Math.sin(t*4):0,entry.motion==='warm'?-1.5*Math.sin(t*2):2*Math.sin(t));
         target.rotate(entry.motion==='thoughtful'?.007*Math.sin(t):0);
@@ -50,7 +51,7 @@
     left=Math.max(0,left-3);top=Math.max(0,top-3);right=Math.min(canvas.width-1,right+3);bottom=Math.min(canvas.height-1,bottom+3);
     return {x:left,y:top,w:right-left+1,h:bottom-top+1};
   }
-  for(const entry of entries){
+  function load(entry){
     const image=new Image(),record={entry,image,state:'loading'};records.set(entry.id,record);
     record.promise=new Promise(resolve=>{
       let finished=false;
@@ -58,8 +59,9 @@
       const timer=setTimeout(()=>finish('failed'),12000);
       image.onload=()=>{try{record.bounds=boundsFor(image);finish('ready');}catch{finish('failed');}};
       image.onerror=()=>finish('failed');
-      image.src=baseURL+'special/'+entry.id+'.png';
+      image.src=baseURL+(entry.src||'special/'+entry.id+'.png');
     });
   }
+  for(const entry of entries)load(entry);
   api.ready=Promise.all([...records.values()].map(record=>record.promise));
 })();

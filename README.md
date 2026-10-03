@@ -44,9 +44,9 @@ For app releases, bump the service-worker cache version and versioned browser as
 
 ## Special Library
 
-Six designed pairs use bundled, transparent 3D-style artwork: thinking king, frozen smile, burning heart, loved up, rainy days, and fiery mood. Select them in the Special Library or mix their ingredients directly. Add any catalog emoji as a third or fourth ingredient; additional effects and accents still use the shared renderer. Other pairs use the standard mixer. The web Special artwork switch lets you compare both styles.
+Six designed pairs use bundled, transparent 3D-style artwork: thinking king, frozen smile, burning heart, loved up, rainy days, and fiery mood. Select them in the Special Library or mix their ingredients directly. Add any catalog emoji as a third or fourth ingredient; additional effects and accents still use the shared renderer. All 131 face expressions can be combined with 15 treatments in `dist/library.html`; 129 use bundled Microsoft Fluent 3D artwork and two newer expressions use the device font. Other categories remain available through the same browser and standard renderer. The web Special artwork switch lets you compare both styles.
 
-Assets live in `dist/special/`; `dist/special.js` handles matching, loading, alpha bounds, failure fallback and gentle motion. These are pre-rendered illustrations, not poseable 3D meshes or runtime AI generations. PNG/GIF export waits for the selected asset, and all six are cached offline and bundled in Android preview 0.2.0.
+Assets live in `dist/special/`; `dist/special.js` handles matching, loading, alpha bounds, failure fallback and gentle motion. These are pre-rendered illustrations, not poseable 3D meshes or runtime AI generations. PNG/GIF export waits for the selected asset, and all six plus the 129 base faces are cached offline and bundled in Android preview 0.3.0.
 
 ## Current boundaries
 
@@ -59,6 +59,12 @@ Assets live in `dist/special/`; `dist/special.js` handles matching, loading, alp
 
 ## Third-party notices
 
+Microsoft Fluent Emoji: `dist/faces/LICENSE.txt` (MIT). Original 256px PNGs; exporting at a larger size does not add detail. Source revision is recorded in `dist/faces/SOURCE.json`.
+
 Unicode data: `dist/vendor/UNICODE-LICENSE.txt`.
 GIF encoder: gifenc 1.0.3, `dist/vendor/gifenc-LICENSE.txt`.
 System emoji artwork is supplied by each device. Review artwork rights before commercial cross-platform distribution. No new license for the project's original source has been selected yet.
+
+## Expanded review library
+
+Run `node scripts/expand-library.mjs` after `npm ci` to export 1,965 transparent 512px PNG compositions and a local searchable HTML gallery. Optional argument: output folder. These are shared treatments, not 1,965 individually sculpted characters. `scripts/import-faces.mjs` refreshes the 129 face sources from a pinned Microsoft commit. All other catalog pairs can be inspected on `library.html`; unsupported semantic combinations remain layered compositions.
