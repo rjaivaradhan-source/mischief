@@ -16,6 +16,16 @@ globalThis.MischiefComposition = {
   draw(canvas,items,phase=null) {
     const plan=this.plan(items),base=plan.base,e={...plan.effects};let accents=plan.accents;const renderEmoji=plan.renderEmoji,integratedFire=plan.integratedFire;
     const special=globalThis.MischiefSpecial,entry=special?.match(items,base),record=special?.record(entry),art=record?.state==='ready'?record:null;
+    if(art&&entry.fullComposition){
+      const target=canvas.getContext('2d');
+      target.clearRect(0,0,canvas.width,canvas.height);
+      target.save();
+      // Preserve the exported canvas and its padding; never crop or re-layer it.
+      if(phase!==null)target.translate(0,Math.sin(phase*Math.PI*2)*1.5*canvas.height/512);
+      target.drawImage(art.image,0,0,canvas.width,canvas.height);
+      target.restore();
+      return;
+    }
     if(art){if(entry.effect)e[entry.effect]=false;accents=accents.filter(item=>!entry.pair.includes(item.emoji));}
     const ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);ctx.save();ctx.scale(canvas.width/512,canvas.height/512);
     const font=' "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif';

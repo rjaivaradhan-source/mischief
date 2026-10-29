@@ -9,10 +9,10 @@ function canvas(){const ctx=new Proxy({measureText:()=>({width:280,actualBoundin
 c.document={createElement:canvas};
 test('special matching preserves expressions, order, aliases and opt-out',()=>{
   for(const entry of c.MischiefSpecial.entries){
-    for(const pair of [entry.pair,[...entry.pair].reverse()]){const items=pair.map(get);assert.equal(c.MischiefSpecial.match(items,c.MischiefComposition.plan(items).base)?.id,entry.id);}
+    for(const pair of [entry.pair,[...entry.pair].reverse()]){const items=pair.map(get);assert.equal(c.MischiefSpecial.match(items,c.MischiefComposition.plan(items).base)?.pair.join('|'),entry.pair.join('|'));}
     const png=fs.readFileSync('dist/special/'+entry.id+'.png');assert.ok(png.readUInt32BE(16)>=1024,'Artwork must support high-resolution export');assert.equal(png[25],6,'Artwork must include an alpha channel');
   }
-  for(const emojis of [['😡','👑'],['🤔','❄️'],['😴','❤️']]){const items=emojis.map(get);assert.equal(c.MischiefSpecial.match(items,c.MischiefComposition.plan(items).base),null);}
+  for(const emojis of [['😡','👑'],['🤔','❄️'],['😴','❤️']]){const items=emojis.map(get);assert.equal(c.MischiefSpecial.match(items,c.MischiefComposition.plan(items).base)?.fullComposition,true);}
   const ice=['😊','🧊'].map(get);assert.equal(c.MischiefSpecial.match(ice,c.MischiefComposition.plan(ice).base).id,'frozen-smile');
   c.MischiefSpecial.enabled=false;assert.equal(c.MischiefSpecial.match(ice,get('😊')),null);c.MischiefSpecial.enabled=true;
 });

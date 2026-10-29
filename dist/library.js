@@ -22,7 +22,7 @@
       await MischiefSpecial.ensure(items);if(ticket!==generation)return;
       MischiefComposition.draw(canvas,items);
       const plan=MischiefComposition.plan(items),entry=MischiefSpecial.match(items,plan.base);
-      note.textContent=entry&&!entry.baseArtwork?'Signature artwork':Object.values(plan.effects).some(Boolean)?'Shared element treatment':'Layered composition';
+      note.textContent=entry?.fullComposition?'Saved smiley mixture':entry&&!entry.baseArtwork?'Signature artwork':Object.values(plan.effects).some(Boolean)?'Shared element treatment':'Layered composition';
       button.textContent='Download PNG';button.disabled=false;button.onclick=()=>canvas.toBlob(blob=>{if(!blob)return;const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='mischief-'+Array.from(subject.emoji+modifier.emoji).map(x=>x.codePointAt(0).toString(16)).join('-')+'.png';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
     }));
   }
