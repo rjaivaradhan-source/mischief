@@ -13,7 +13,9 @@ test('all 1965 saved pairs are exact copies and match in both orders',()=>{
  for(const row of rows){
   assert.equal(hash(fs.readFileSync('dist/mixtures/'+row.file)),hash(fs.readFileSync('../mischief-special-library/smiley-mixtures/'+row.file)));
   for(const pair of [items(row),items(row).reverse()]){
-   const entry=c.MischiefSpecial.match(pair,pair[0]);assert.equal(entry.src,'mixtures/'+row.file);assert.equal(entry.fullComposition,true);
+   const entry=c.MischiefSpecial.match(pair,pair[0]);
+   if(row.effect==='crown') assert.notEqual(entry?.fullComposition,true);
+   else {assert.equal(entry.src,'mixtures/'+row.file);assert.equal(entry.fullComposition,true);}
   }
  }
 });

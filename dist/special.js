@@ -23,7 +23,8 @@
       if(!this.enabled)return null;
       const emojis=items.map(x=>x.emoji);
       // Finished pairs are whole stickers, not subjects for another effect pass.
-      const saved=emojis.length===2?savedMixtures.find(entry=>entry.pair.every(emoji=>emojis.includes(emoji))):null;
+      // Saved crown PNGs are flat overlays. Let the renderer seat the crown on the face.
+      const saved=emojis.length===2?savedMixtures.find(entry=>entry.pair[1]!=='👑'&&entry.pair.every(emoji=>emojis.includes(emoji))):null;
       if(saved)return saved;
       // Keep the planner's dominant expression. Never turn an angry face into a happy one.
       return entries.find(entry=>entry.pair[0]===base.emoji && emojis.includes(entry.pair[0]) &&
